@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import YouTube from "react-youtube";
+import { Link } from "react-router-dom";
 
 const VideoList = () => {
   const [videos, setVideos] = useState([]);
@@ -50,15 +51,16 @@ const VideoList = () => {
 
   return (
     <div>
-      {videos.map((video) => (
-        <YouTube
-          key={video.id.videoId}
-          videoId={video.id.videoId}
-          opts={opts}
-        />
-      ))}
-    </div>
-  );
+    {videos.map((video) => (
+      <div key={video.id.videoId}>
+        <Link to={`/video/${encodeURIComponent(video.id.videoId)}`}>
+          <img src={video.snippet.thumbnails.default.url} alt={video.snippet.title} />
+          <p>{video.snippet.title}</p>
+        </Link>
+      </div>
+    ))}
+  </div>
+);
 };
 
 export default VideoList;
