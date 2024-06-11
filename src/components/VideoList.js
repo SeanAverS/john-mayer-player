@@ -8,6 +8,10 @@ const VideoList = () => {
   const apiKey = "AIzaSyBVIOEDjrULYj_7yyTKCsUZswI6zyvlaVE";
 
   useEffect(() => {
+    const cachedVideos = localStorage.getItem("videos")
+    if (cachedVideos) {
+      setVideos(JSON.parse(cachedVideos))
+    } else {
     const fetchVideos = async () => {
       try {
         const params = {
@@ -29,6 +33,8 @@ const VideoList = () => {
           ).toString()}`
         );
 
+        localStorage.setItem("videos", JSON.stringify(response.data.items));
+
         setVideos(response.data.items);
       } catch (error) {
         console.error("Error fetching videos:", error);
@@ -39,7 +45,8 @@ const VideoList = () => {
     };
 
     fetchVideos();
-  }, [apiKey]);
+  }
+}, [apiKey]);
 
   const opts = {
     height: "390",
