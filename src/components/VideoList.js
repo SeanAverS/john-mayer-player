@@ -8,45 +8,45 @@ const VideoList = () => {
   const apiKey = "AIzaSyBVIOEDjrULYj_7yyTKCsUZswI6zyvlaVE";
 
   useEffect(() => {
-    const cachedVideos = localStorage.getItem("videos")
+    const cachedVideos = localStorage.getItem("videos");
     if (cachedVideos) {
-      setVideos(JSON.parse(cachedVideos))
+      setVideos(JSON.parse(cachedVideos));
     } else {
-    const fetchVideos = async () => {
-      try {
-        const params = {
-          key: apiKey,
-          part: "snippet",
-          q: "John Mayer 2019 Live",
-          type: "video",
-          maxResults: 3,
-        };
-        const response = await axios.get(
-          "https://www.googleapis.com/youtube/v3/search",
-          { params }
-        );
+      const fetchVideos = async () => {
+        try {
+          const params = {
+            key: apiKey,
+            part: "snippet",
+            q: "John Mayer 2019 Live",
+            type: "video",
+            maxResults: 3,
+          };
+          const response = await axios.get(
+            "https://www.googleapis.com/youtube/v3/search",
+            { params }
+          );
 
-        console.log(
-          "Request URL:",
-          `https://www.googleapis.com/youtube/v3/search?${new URLSearchParams(
-            params
-          ).toString()}`
-        );
+          console.log(
+            "Request URL:",
+            `https://www.googleapis.com/youtube/v3/search?${new URLSearchParams(
+              params
+            ).toString()}`
+          );
 
-        localStorage.setItem("videos", JSON.stringify(response.data.items));
+          localStorage.setItem("videos", JSON.stringify(response.data.items));
 
-        setVideos(response.data.items);
-      } catch (error) {
-        console.error("Error fetching videos:", error);
-        if (error.response) {
-          console.log("Error Response Data:", error.response.data);
+          setVideos(response.data.items);
+        } catch (error) {
+          console.error("Error fetching videos:", error);
+          if (error.response) {
+            console.log("Error Response Data:", error.response.data);
+          }
         }
-      }
-    };
+      };
 
-    fetchVideos();
-  }
-}, [apiKey]);
+      fetchVideos();
+    }
+  }, [apiKey]);
 
   const opts = {
     height: "390",
@@ -58,16 +58,19 @@ const VideoList = () => {
 
   return (
     <div>
-    {videos.map((video) => (
-      <div key={video.id.videoId}>
-        <Link to={`/video/${encodeURIComponent(video.id.videoId)}`}>
-          <img src={video.snippet.thumbnails.default.url} alt={video.snippet.title} />
-          <p>{video.snippet.title}</p>
-        </Link>
-      </div>
-    ))}
-  </div>
-);
+      {videos.map((video) => (
+        <div key={video.id.videoId}>
+          <Link to={`/video/${encodeURIComponent(video.id.videoId)}`}>
+            <img
+              src={video.snippet.thumbnails.default.url}
+              alt={video.snippet.title}
+            />
+            <p>{video.snippet.title}</p>
+          </Link>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default VideoList;

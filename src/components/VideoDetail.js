@@ -42,20 +42,30 @@ const VideoDetail = () => {
         setRelatedVideos(JSON.parse(cachedRelatedVideos));
       } else {
         try {
-          const response = await axios.get("https://www.googleapis.com/youtube/v3/search", {
-            params: {
-              key: apiKey,
-              part: "snippet",
-              relatedToVideoId: encodeURIComponent(id),
-              type: "video",
-              maxResults: 3,
-            },
-          });
-          localStorage.setItem(`relatedVideos-${id}`, JSON.stringify(response.data.items));
+          const response = await axios.get(
+            "https://www.googleapis.com/youtube/v3/search",
+            {
+              params: {
+                key: apiKey,
+                part: "snippet",
+                relatedToVideoId: encodeURIComponent(id),
+                type: "video",
+                maxResults: 3,
+              },
+            }
+          );
+          localStorage.setItem(
+            `relatedVideos-${id}`,
+            JSON.stringify(response.data.items)
+          );
           setRelatedVideos(response.data.items);
         } catch (error) {
           console.error("Error fetching related videos:", error);
-          if (error.response && error.response.data && error.response.data.error) {
+          if (
+            error.response &&
+            error.response.data &&
+            error.response.data.error
+          ) {
             console.log("Error Response Data:", error.response.data.error);
           }
         }
