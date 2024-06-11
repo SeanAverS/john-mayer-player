@@ -15,7 +15,7 @@ const VideoList = () => {
           part: "snippet",
           q: "John Mayer 2019 Live",
           type: "video",
-          maxResults: 10,
+          maxResults: 3,
         };
         const response = await axios.get(
           "https://www.googleapis.com/youtube/v3/search",
