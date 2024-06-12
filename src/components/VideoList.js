@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import YouTube from "react-youtube";
 import { Link } from "react-router-dom";
 
 const VideoList = () => {
@@ -47,14 +46,6 @@ const VideoList = () => {
       fetchVideos();
     }
   }, [apiKey]);
-
-  const opts = {
-    height: "390",
-    width: "640",
-    playerVars: {
-      autoplay: 0,
-    },
-  };
 
   return (
     <div>
