@@ -48,7 +48,8 @@ const VideoDetail = () => {
               params: {
                 key: apiKey,
                 part: "snippet",
-                relatedToVideoId: encodeURIComponent(id),
+                relatedtoVideoID: id,
+                // q: 'John Mayer 2019 Live',
                 type: "video",
                 maxResults: 3,
               },
