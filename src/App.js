@@ -2,7 +2,7 @@ import logo from "./john-mayer-logo.png";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import VideoDetail from "./components/VideoDetail";
 import VideoList from "./components/VideoList";
-import "./App.css";
+import "./styles/App.css";
 
 function App() {
   return (
