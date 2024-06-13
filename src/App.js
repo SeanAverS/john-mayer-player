@@ -4,6 +4,7 @@ import VideoDetail from "./components/VideoDetail";
 import VideoList from "./components/VideoList";
 import "./styles/logo.css";
 import "./styles/global.css"
+import "./styles/videoStyling.css"
 
 function App() {
   return (

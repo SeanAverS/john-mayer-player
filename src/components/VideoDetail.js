@@ -97,13 +97,14 @@ const VideoDetail = () => {
       <div>
         <h3>Related Videos</h3>
         {relatedVideos.map((video) => (
-          <div key={video.id.videoId}>
-            <Link to={`/video/${encodeURIComponent(video.id.videoId)}`}>
+          <div key={video.id.videoId} className="video-container">
+            <Link to={`/video/${encodeURIComponent(video.id.videoId)}`} className="video-link">
               <img
                 src={video.snippet.thumbnails.default.url}
                 alt={video.snippet.title}
+                className="video-thumbnail"
               />
-              <p>{video.snippet.title}</p>
+              <p className="video-title">{video.snippet.title}</p>
             </Link>
           </div>
         ))}
