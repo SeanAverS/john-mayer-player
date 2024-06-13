@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import VideoDetail from "./components/VideoDetail";
 import VideoList from "./components/VideoList";
 import "./styles/App.css";
+import "./styles/global.css"
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
+        <header className="global">
           <Link to="/">
             <img src={logo} className="App-logo" alt="logo" />
           </Link>
