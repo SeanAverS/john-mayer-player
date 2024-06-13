@@ -100,7 +100,7 @@ const VideoDetail = () => {
           <div key={video.id.videoId} className="video-container">
             <Link to={`/video/${encodeURIComponent(video.id.videoId)}`} className="video-link">
               <img
-                src={video.snippet.thumbnails.default.url}
+                src={video.snippet.thumbnails.high.url}
                 alt={video.snippet.title}
                 className="video-thumbnail"
               />
