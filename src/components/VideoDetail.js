@@ -91,7 +91,6 @@ const VideoDetail = () => {
         <div>
           <YouTube videoId={video.id} opts={opts} />
           <h2>{video.snippet.title}</h2>
-          <p>{video.snippet.description}</p>
         </div>
       )}
       <div>
