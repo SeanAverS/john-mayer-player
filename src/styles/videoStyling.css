@@ -30,3 +30,6 @@
     color: inherit;
   }
   
+  .main-video iframe {
+    width: 100%; 
+  }

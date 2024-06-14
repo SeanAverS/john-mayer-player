@@ -88,7 +88,7 @@ const VideoDetail = () => {
   return (
     <div>
       {video && (
-        <div>
+        <div className="main-video">
           <YouTube videoId={video.id} opts={opts} />
           <h2>{video.snippet.title}</h2>
         </div>
