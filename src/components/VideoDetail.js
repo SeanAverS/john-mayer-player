@@ -49,7 +49,6 @@ const VideoDetail = () => {
                 key: apiKey,
                 part: "snippet",
                 relatedtoVideoID: id,
-                // q: 'John Mayer 2019 Live',
                 type: "video",
                 maxResults: 3,
               },
@@ -97,7 +96,10 @@ const VideoDetail = () => {
         <h3>Related Videos</h3>
         {relatedVideos.map((video) => (
           <div key={video.id.videoId} className="video-container">
-            <Link to={`/video/${encodeURIComponent(video.id.videoId)}`} className="video-link">
+            <Link
+              to={`/video/${encodeURIComponent(video.id.videoId)}`}
+              className="video-link"
+            >
               <img
                 src={video.snippet.thumbnails.high.url}
                 alt={video.snippet.title}
