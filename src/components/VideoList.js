@@ -48,7 +48,7 @@ const VideoList = () => {
   }, [apiKey]);
 
   return (
-    <div>
+    <div className="video-grid">
       {videos.map((video) => (
         <div key={video.id.videoId} className="video-container">
           <Link
