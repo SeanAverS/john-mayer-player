@@ -58,7 +58,7 @@ const VideoList = () => {
             <img
               src={video.snippet.thumbnails.high.url}
               alt={video.snippet.title}
-              className="video-thumbnail"
+              className="video-thumbnails"
             />
             <p className="video-title">{video.snippet.title}</p>
           </Link>

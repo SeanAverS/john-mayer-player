@@ -19,14 +19,6 @@
     transform: scale(1.05);
   }
   
-  .video-thumbnail {
-    width: 100%;
-    max-width: 360px;
-    border-radius: 8px;
-    max-height: 200px;
-    object-fit: cover;
-  }
-  
   .video-title {
     margin-top: 10px;
     font-size: 1em;
@@ -39,6 +31,3 @@
     color: inherit;
   }
   
-  .main-video iframe {
-    width: 100%; 
-  }
