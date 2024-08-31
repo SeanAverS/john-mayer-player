@@ -1,8 +1,8 @@
 .video-thumbnails {
     width: 100%;
-    max-width: 360px;
+    max-width: 330px;
     border-radius: 8px;
-    max-height: 150px;
+    max-height:180px;
     object-fit: cover;
   }
   
