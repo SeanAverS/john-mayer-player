@@ -1,8 +1,7 @@
-## Page with only John Mayer live youtube videos 
+## Page With Just John Mayer Live Youtube Videos 
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Installation
+1. Clone the repo your machine - `git clone`
+2. Navigate to the project dir - `cd/john-mayer-player`
+3. Install dependencies - `npm install`
+4. Run project - `npm start`
