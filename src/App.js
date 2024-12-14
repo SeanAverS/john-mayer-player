@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import VideoDetail from "./components/VideoDetail";
 import VideoList from "./components/VideoList";
 import "./styles/logo.css";
-import "./styles/global.css"
-import "./styles/globalVideoStyling.css"
-import "./styles/videoListStyling.css"
-import "./styles/videoDetailStyling.css"
+import "./styles/global.css";
+import "./styles/globalVideoStyling.css";
+import "./styles/videoListStyling.css";
+import "./styles/videoDetailStyling.css";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/john-mayer-player">
       <div className="App">
         <header className="global">
           <Link to="/">
